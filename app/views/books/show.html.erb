@@ -1,0 +1,22 @@
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p>
+<strong>Title:</strong>
+<%= @book.title %>
+</p>
+
+<p>
+<strong>Body:</strong>
+<%= @book.body %>
+</p>
+
+<%= link_to "Edit", edit_book_path(@book.id) %>
+|
+<a href="/books">Back</a>
